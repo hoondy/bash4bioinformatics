@@ -49,3 +49,13 @@ find '/path/to/files/' | grep MCF-7 > list_mcf7.txt
 ```
 grep -e "^MYC\t" xxx.tsv
 ```
+
+### Find all files from subdirectorie and move them to current directory
+```
+find . -mindepth 2 -type f -print -exec gmv --backup=t {} . \;
+```
+
+### Delete subdirectories if empty
+```
+find . -mindepth 1 -type d -prune -print -exec rmdir {} \;
+```
